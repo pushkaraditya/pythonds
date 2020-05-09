@@ -1,5 +1,5 @@
-class Stack:
-    def __init__:
+class Stack():
+    def __init__(self):
         self.items = []
 
     def isEmpty(self):
