@@ -68,16 +68,18 @@ class OrderedList():
         index = 0
         while current != None:
             if index < pos:
-                current = current.getNext()
+                previous, current = current, current.getNext()
                 index += 1
             elif index == pos:
                 if previous == None:
-                    self.head = None
+                    temp = self.head
+                    self.head = temp.getNext()
+                    return temp.getData()
                 else:
                     previous.setNext(current.getNext())
-                    return current
+                    return current.getData()
             else:
-                raise Exception()
+                raise Exception("element not found at pos")
 
     # def pop(self):
     #     if self.head == None:
@@ -105,5 +107,7 @@ mylist.add(4)
 mylist.add(10)
 mylist.add(2)
 print(mylist)
-print(mylist.pop())
+print(mylist.index(11))
+# mylist.remove(4)
+print(mylist.pop(3))
 print(mylist)
