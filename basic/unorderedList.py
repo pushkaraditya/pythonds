@@ -49,19 +49,3 @@ class UnorderedList():
             data.append(current.getData())
             current = current.getNext()
         return str(data)
-
-
-mylist = UnorderedList()
-
-mylist.add(31)
-mylist.add(77)
-mylist.add(17)
-mylist.add(93)
-mylist.add(26)
-mylist.add(54)
-print(mylist.size())
-
-# print(mylist.search(26))
-# print(mylist.search(27))
-mylist.remove(31)
-print(mylist.size())

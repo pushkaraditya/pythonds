@@ -95,19 +95,3 @@ class OrderedList():
             data.append(current.getData())
             current = current.getNext()
         return str(data)
-
-
-mylist = OrderedList()
-# print(mylist.isEmpty())
-# print(mylist.size())
-# print(mylist)
-# print(mylist.pop(10))
-
-mylist.add(4)
-mylist.add(10)
-mylist.add(2)
-print(mylist)
-print(mylist.index(11))
-# mylist.remove(4)
-print(mylist.pop(3))
-print(mylist)
