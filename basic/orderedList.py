@@ -15,7 +15,7 @@ class OrderedList():
             self.head = temp
         else:
             previous.setNext(temp)
-            temp.setNext(current)
+        temp.setNext(current)
 
     def remove(self, item):
         current = self.head
@@ -86,3 +86,24 @@ class OrderedList():
     #         temp = self.head
     #         self.head = self.head.getNext()
     #         return temp
+    def __str__(self):
+        current = self.head
+        data = []
+        while current != None:
+            data.append(current.getData())
+            current = current.getNext()
+        return str(data)
+
+
+mylist = OrderedList()
+# print(mylist.isEmpty())
+# print(mylist.size())
+# print(mylist)
+# print(mylist.pop(10))
+
+mylist.add(4)
+mylist.add(10)
+mylist.add(2)
+print(mylist)
+print(mylist.pop())
+print(mylist)

@@ -42,6 +42,13 @@ class UnorderedList():
             cn = cn.getNext()
         return False
 
+    def __str__(self):
+        current = self.head
+        data = []
+        while current != None:
+            data.append(current.getData())
+            current = current.getNext()
+        return str(data)
 
 
 mylist = UnorderedList()
