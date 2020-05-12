@@ -145,26 +145,26 @@ def main():
     x = blockCell
     S = startingCell
     o = openCell
-    m = [
-            [x,x,x,x,x],
-            [x,o,o,o,x],
-            [x,S,x,o,x],
-            [x,x,o,o,x],
-            [x,x,o,x,x]
-    ]
     # m = [
-    #         [x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x],
-    #         [x,o,o,o,x,o,o,o,x,x,o,x,x,o,o,o,o,o,x,o,o,o],
-    #         [x,o,x,o,o,o,x,o,o,o,o,o,o,o,x,x,x,o,x,o,x,x],
-    #         [x,o,x,o,x,o,o,x,x,o,o,x,x,x,x,o,o,o,x,o,x,x],
-    #         [x,x,x,o,x,x,x,x,x,x,o,o,o,o,x,x,x,o,x,o,o,x],
-    #         [x,o,o,o,o,o,o,o,o,o,o,x,x,o,o,x,x,o,o,o,o,x],
-    #         [x,x,x,x,x,o,x,x,x,x,x,x,o,o,o,x,x,x,x,x,o,x],
-    #         [x,o,o,o,o,o,x,o,o,o,x,x,x,x,x,x,x,o,o,x,o,x],
-    #         [x,o,x,x,x,x,x,x,x,o,o,o,o,o,o,S,o,x,o,o,o,x],
-    #         [x,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,x,o,x,x,x],
-    #         [x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,o,x,x,x],
-    #     ]
+    #         [x,x,x,x,x],
+    #         [x,o,o,o,x],
+    #         [x,S,x,o,x],
+    #         [x,x,o,o,x],
+    #         [x,x,o,x,x]
+    # ]
+    m = [
+            [x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x],
+            [x,o,o,o,x,o,o,o,x,x,o,x,x,o,o,o,o,o,x,o,o,o],
+            [x,o,x,o,o,o,x,o,o,o,o,o,o,o,x,x,x,o,x,o,x,x],
+            [x,o,x,o,x,o,o,x,x,o,o,x,x,x,x,o,o,o,x,o,x,x],
+            [x,x,x,o,x,x,x,x,x,x,o,o,o,o,x,x,x,o,x,o,o,x],
+            [x,o,o,o,o,o,o,o,o,o,o,x,x,o,o,x,x,o,o,o,o,x],
+            [x,x,x,x,x,o,x,x,x,x,x,x,o,o,o,x,x,x,x,x,o,x],
+            [x,o,o,o,o,o,x,o,o,o,x,x,x,x,x,x,x,o,o,x,o,x],
+            [x,o,x,x,x,x,x,x,x,o,o,o,o,o,o,S,o,x,o,o,o,x],
+            [x,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,x,o,x,x,x],
+            [x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,o,x,x,x],
+        ]
     # m = [
     #     [x,x,x],
     #     [x,S,x],
