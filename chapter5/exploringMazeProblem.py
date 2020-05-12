@@ -67,7 +67,16 @@ class Maze():
         self.t.goto(x, y)
         self.t.down()
 
+    def copyMaze(self):
+        self.cm = [[v for v in row] for row in self.m] # copied maze
+
+    def evaluate(self, i, j):
+        pass
+
     def solve(self):
+        # i, j = self.start
+        self.copyMaze()
+        print(self.cm)
         self.drawCell(1, 1, self.wip)
         self.drawCell(2, 1, self.wip)
         self.drawCell(2, 1, self.path)
