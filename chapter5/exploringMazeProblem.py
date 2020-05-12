@@ -152,6 +152,17 @@ def main():
     #         [x,x,o,o,x],
     #         [x,x,o,x,x]
     # ]
+    # m = [
+    #     [x,x,x],
+    #     [x,S,x],
+    #     [x,o,x]
+    # ]
+    # m = [
+    #     [x,x,x,x],
+    #     [x,S,o,x],
+    #     [x,o,o,x],
+    #     [x,x,x,x]
+    # ]
     m = [
             [x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x],
             [x,o,o,o,x,o,o,o,x,x,o,x,x,o,o,o,o,o,x,o,o,o],
@@ -165,11 +176,6 @@ def main():
             [x,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,o,x,o,x,x,x],
             [x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,o,x,x,x],
         ]
-    # m = [
-    #     [x,x,x],
-    #     [x,S,x],
-    #     [x,o,x]
-    # ]
 
     m = Maze(t, m)
 
