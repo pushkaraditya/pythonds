@@ -15,6 +15,10 @@ def getMin(coins, min, lastCoinUsed, val):
 def main():
     coins = [1, 5, 10, 21, 25]
     n = 63
+
+    # coins = [1, 5, 8, 25]
+    # n = 33
+
     min = [0] * (n + 1)
     lastCoinUsed = [0] * (n + 1)
     min[0] = 0
