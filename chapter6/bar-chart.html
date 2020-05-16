@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Playing with Chart.js library</title>
+        <script type="text/javascript" src="./Chart.js"></script>
+    </head>
+    <body>
+        <h1>Bar Charts with Chart.js library</h1>
+        <!-- <div>I have tried to get the feeling of charts and visualization of sorting algorithm using python. Apparantly using matplotlib can be useful library however I have am trying HTML and JavaScript because I wanted to try other things with Chart.js</div> -->
+        <div class="chart-container" style="position: relative" width="50px" height="50px">
+            <!-- <div class="chart-container" style="position: relative; height:40vh; width:80vw"> -->
+            <canvas id="myChart" aria-label="Hello ARIA World" role="img"></canvas>
+        </div>
+        <script>
+            var lbls = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
+            var bgColors = [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ];
+            var borderColors = [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ];
+            var ctx = document.getElementById("myChart");
+            var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                // labels: lbls,
+                datasets: [{
+                    label: '# of Votes',
+                    // data: [12, 19, 3, 5, 2, 3],
+//                     data: [{
+//     x: 10,
+//     y: 15
+// }, {
+//     x: 15,
+//     y: 10
+// }],
+                    data: [[10,15],[15,10]],
+                    backgroundColor: bgColors,
+                    borderColor: borderColors,
+                    borderWidth: 1
+                }]
+            },
+            // options: {
+            //     scales: {
+            //         yAxes: [{
+            //             ticks: {
+            //                 beginAtZero: true
+            //             }
+            //         }]
+            //     }
+            // }
+            });
+            myChart.canvas.parentNode.style.height = '400px';
+            myChart.canvas.parentNode.style.width = '400px';
+        </script>
+
+    </body>
+</html>
