@@ -15,62 +15,12 @@
 
         <div id="chart"></div>
 
-
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="./basic-bar-chart.js"></script>
+        <script src="./bubble-sort.js"></script>
         <script>
-            var toppings = [];
-            var slices = [];
-            for (var i = 0; i <= 10; i++) {
-                toppings.push('');
-                slices.push(i);
-            }
-
-            function swap(i, j) {
-                var temp = slices[i];
-                slices[i] = slices[j];
-                slices[j] = temp;
-                chart.draw(getGoogleData(), options);
-            }
-
-            function Add() {
-                var val = document.getElementById('number').value;
-                toppings.push('');
-                slices.push(val);
-                // drawChart();
-                chart.draw(getGoogleData(), options);
-            }
-
-            // var toppings = ['Paneer', 'Olive', 'Baby Corn'];
-            // var slices = [40, 35, 25];
-            function zip(arrays) {
-                return arrays[0].map(function(_,i){
-                    return arrays.map(function(array){return array[i]})
-                });
-            }
-
-            function getGoogleData() {
-                var myData = zip([toppings, slices]);
-                myData.unshift(['Topping', 'Slices']);
-                // console.log(myData);
-                var data = new google.visualization.arrayToDataTable(myData);
-
-                return data;
-            }
-
-            var options = {
-                    'title': 'Pizza Dreams',
-                    'height': 200,
-                    'width':400,
-                    'bar':{'groupWidth':25}
-                };
-                var chart = null;
             google.charts.load('current', {'packages':['corechart']});
-            google.charts.setOnLoadCallback(drawChart);
-            function drawChart() {
-                var data = getGoogleData();
-                chart = new google.visualization.ColumnChart(document.getElementById('chart'));
-                chart.draw(data, options);
-            }
+            google.charts.setOnLoadCallback(bubbleSort);
         </script>
     </body>
 </html>
