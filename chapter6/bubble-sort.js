@@ -1,15 +1,21 @@
 var bubbleSort = (function() {
 
     var chart = null;
-    var data = [10, 1, 9, 3, 6, 4, 2, 5, 8, 7];
+    var originalData = [10, 1, 9, 3, 6, 4, 2, 5, 8, 7];
+    var data = copyArray(originalData);
 
     function init() {
-        var options = {title: 'Bubble title'};
+        var options = {title: 'Bubble Sort'};
 
-        chart = chartBasic('bubble-sort', data, options);
+        chart = chartBasic('bubble-sort', 'bubble-sort-progress', data, options);
         chart.draw();
     }
-
+    
+    function reset() {
+        data = copyArray(originalData);
+        chart.setArray(data);
+        chart.draw();
+    }
 
     function sort() {
         for (var i = 0; i < data.length; i++) {
@@ -22,6 +28,7 @@ var bubbleSort = (function() {
 
     return {
         init,
+        reset,
         sort
     }
 });

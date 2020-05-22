@@ -1,17 +1,27 @@
-var chartBasic = (function (ele, arr, options) {
+var chartBasic = (function (ele, pele, arr, options) {
     var initArray = arr;
     var initOptions = options;
     var chartElement = document.getElementById(ele);
+    var progressElement = document.getElementById(pele);
+
+    var defaultStyle = 'stroke-color: #312ab5; stroke-width: 1; fill-color: #3864f5';
+    var compareStyle = 'stroke-color: #312ab5; stroke-width: 1; fill-color: #30fca4';
+    var largerStyle = 'stroke-color: #312ab5; stroke-width: 1; fill-color: #f930fc';
+    var smallerStyle = 'stroke-color: #312ab5; stroke-width: 1; fill-color: #effc30';
 
     function getArray(arr) {
-        if(arr === undefined)
+        if(arr === undefined || arr === null)
             arr = initArray;
         return arr;
     }
 
-    function convertData(arr) {
-        var data = getArray(arr).map(x => ['', x]);
-        data.unshift(['', '']);
+    function convertData(arr, iOption, jOption) {
+        var data = getArray(arr).map(x => ['', x, defaultStyle]);
+        if(iOption !== undefined && iOption === null)
+            data[iOption.index][2] = iOption.style;
+        if(jOption !== undefined && jOption === null)
+            data[jOption.index][2] = jOption.style;
+        data.unshift(['', '', { role: 'style' }]);
         return new google.visualization.arrayToDataTable(data);
     }
 
@@ -33,9 +43,9 @@ var chartBasic = (function (ele, arr, options) {
         options.bar = Object.assign({}, options.bar, {groupWidth: options.width / getArray(arr).length});
     }
 
-    function draw(arr, options) {
-        var data = convertData(arr);
-        var options = getOptions(options);
+    function draw(iOption, jOption) {
+        var data = convertData(null, iOption, jOption);
+        var options = getOptions();
 
         setGroupWidth(options, arr);
 
@@ -60,6 +70,12 @@ var chartBasic = (function (ele, arr, options) {
     }
 
     function larger(i, j) {
+        progressElement.innerText = `Comparing ${i} and ${j} element`;
+        var iOption = { index: i, style: compareStyle };
+        var jOption = { index: j, style: compareStyle };
+        draw(iOption, jOption);
+        // sleep(100);
+
         return initArray[i] > initArray[j];
     }
     

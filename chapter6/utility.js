@@ -7,6 +7,10 @@ function shuffleArray(array) {
     }
 }
 
+function copyArray(arr) {
+    return arr.map(x => x);
+}
+
 function sleep(delay) {
     var start = new Date().getTime();
     while (new Date().getTime() < start + delay);
