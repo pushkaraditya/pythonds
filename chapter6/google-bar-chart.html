@@ -10,17 +10,20 @@
             <div>This is the section where I wanted to make it more interactive</div>
             <input type="text" id="number" />
             <input type="button" onclick="Add()" value="Add" />
-            <input type="button" onclick="swap(2,5)" value="Swap" />
+            <input type="button" onclick="bs.sort()" value="Sort" />
         </div>
 
-        <div id="chart"></div>
+        <div id="bubble-sort"></div>
 
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script src="./basic-bar-chart.js"></script>
         <script src="./bubble-sort.js"></script>
+        <script src="./utility.js"></script>
         <script>
+            var bs = bubbleSort();
+
             google.charts.load('current', {'packages':['corechart']});
-            google.charts.setOnLoadCallback(bubbleSort);
+            google.charts.setOnLoadCallback(bs.init);
         </script>
     </body>
 </html>
